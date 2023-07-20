@@ -4,11 +4,6 @@ import { BiLeftArrow } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Phase Ten - Home",
-  description: "Creado para que no haya trampas",
-};
-
 export default function Layout({ children }) {
   const navigate = useRouter();
   return (
