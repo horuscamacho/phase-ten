@@ -1,5 +1,6 @@
 'use client'
 import {useRouter} from "next/navigation";
+import {useState} from "react";
 
 
 export default function Login() {
@@ -8,7 +9,11 @@ export default function Login() {
         e.preventDefault();
         route.push("/home");
     }
+
+    const [ openModal, closeModal ] = useState(false)
+
     return (
+
         <form className="h-full w-full bg-white rounded-3xl mt-4 flex flex-col items-center py-5" onSubmit={handleSubmit}>
             <h1 className="text-2xl font-black">Iniciar Sesión</h1>
             <label className="text-xl mt-11 font-semibold">Usuario</label>

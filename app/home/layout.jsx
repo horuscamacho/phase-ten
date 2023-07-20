@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -8,9 +9,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <>
-      <main className="w-screen h-screen bg-amarillo flex flex-col justify-around items-center">
+      <main className="w-screen h-screen bg-amarillo flex flex-col justify-around items-center relative">
         {children}
       </main>
     </>
