@@ -14,6 +14,9 @@ export default function NewSeason({ closeModal }) {
           <form className="w-5/6 h-4/6 ">
             <label className="text-2xl text-negro font-bold">Nombre:</label>
             <input className="w-full h-12 border border-negro mt-4" />
+            <button className="bg-rojo mt-40 w-full h-12 rounded-md text-white text-lg font-bold">
+              Iniciar
+            </button>
           </form>
         </div>
       </div>

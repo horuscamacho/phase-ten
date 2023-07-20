@@ -1,12 +1,12 @@
 "use client";
-import NewSeasonButton from "@/app/home/components/NewSeasonButton";
-import EndSeasonButton from "@/app/home/components/EndSeasonButton";
-import ModalCreateEdit from "@/app/home/components/ModalCreateEdit";
+import NewSeasonButton from "@/app/admin/temporadas/components/NewSeasonButton";
+import EndSeasonButton from "@/app/admin/temporadas/components/EndSeasonButton";
+import ModalCreateEdit from "@/app/admin/temporadas/components/ModalCreateEdit";
 import { useState } from "react";
-import NewSeason from "@/app/home/components/NewSeason";
-import EndSeason from "@/app/home/components/EndSeason";
+import NewSeason from "@/app/admin/temporadas/components/NewSeason";
+import EndSeason from "@/app/admin/temporadas/components/EndSeason";
 
-export default function Home() {
+export default function Admin() {
   const [showModal, setShowModal] = useState({
     status: false,
     type: undefined,
@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-screen h-screen bg-amarillo flex flex-col justify-around items-center relative">
+      <div className="w-screen h-full bg-amarillo flex flex-col justify-around items-center relative">
         <NewSeasonButton onClick={setShowModal} />
         <EndSeasonButton onClick={setShowModal} />
       </div>
