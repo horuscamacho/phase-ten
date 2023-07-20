@@ -1,3 +1,5 @@
+import { BiX } from "react-icons/bi";
+import CTAButton from "@/app/components/CTAButton";
 export default function EndSeason({ closeModal }) {
   return (
     <>
@@ -10,7 +12,7 @@ export default function EndSeason({ closeModal }) {
               closeModal({ status: false, type: undefined });
             }}
           >
-            x
+            <BiX size={30} />
           </span>
         </div>
         <div className="w-full h-full flex justify-center items-center">
@@ -19,9 +21,14 @@ export default function EndSeason({ closeModal }) {
             <select className="h-12 text-negro font-black mt-4">
               <option value="season01">Temporada 1</option>
             </select>
-            <button className="bg-negro mt-40 w-full h-12 rounded-md text-white text-lg font-bold">
-              Terminar
-            </button>
+            <div className="w-full h-12 flex justify-center mt-32">
+              <CTAButton color="verde">Terminar Temporada</CTAButton>
+            </div>
+            <div className="w-full h-12 flex justify-center mt-4">
+              <CTAButton color="negro" onClick={closeModal}>
+                Cancelar
+              </CTAButton>
+            </div>
           </form>
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function AdminPage() {
     <>
       <div className="w-full h-full flex flex-col items-center justify-around">
         <SquareButton
-          color="azul"
+          color="amarillo"
           type="button"
           onClick={() => handleOnClick("/admin/temporadas")}
         >
@@ -21,9 +21,16 @@ export default function AdminPage() {
         <SquareButton
           color="verde"
           type="button"
-          onClick={() => handleOnClick("/admin/partida")}
+          onClick={() => handleOnClick("/partida")}
         >
           Partida
+        </SquareButton>
+        <SquareButton
+          color="azul"
+          type="button"
+          onClick={() => handleOnClick("/histórico")}
+        >
+          Histórico
         </SquareButton>
         <div className="w-4/6 h-12">
           <CTAButton type="button" color="rojo">

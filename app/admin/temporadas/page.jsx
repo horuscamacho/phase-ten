@@ -1,10 +1,11 @@
 "use client";
-import NewSeasonButton from "@/app/admin/temporadas/components/NewSeasonButton";
-import EndSeasonButton from "@/app/admin/temporadas/components/EndSeasonButton";
-import ModalCreateEdit from "@/app/admin/temporadas/components/ModalCreateEdit";
+
+import Modal from "@/app/admin/temporadas/components/Modal";
 import { useState } from "react";
 import NewSeason from "@/app/admin/temporadas/components/NewSeason";
 import EndSeason from "@/app/admin/temporadas/components/EndSeason";
+import SquareButton from "@/app/components/SquareButton";
+import MarcadorTemporada from "@/app/admin/temporadas/components/MarcadorTemporada";
 
 export default function Admin() {
   const [showModal, setShowModal] = useState({
@@ -15,17 +16,35 @@ export default function Admin() {
   return (
     <>
       <div className="w-screen h-full bg-amarillo flex flex-col justify-around items-center relative">
-        <NewSeasonButton onClick={setShowModal} />
-        <EndSeasonButton onClick={setShowModal} />
+        <SquareButton
+          onClick={() => setShowModal({ status: true, type: "new" })}
+          color="verde"
+        >
+          Nueva Temporada
+        </SquareButton>
+        <SquareButton
+          onClick={() => setShowModal({ status: true, type: "score" })}
+          color="azul"
+        >
+          Marcador Temporada
+        </SquareButton>
+        <SquareButton
+          onClick={() => setShowModal({ status: true, type: "end" })}
+          color="rojo"
+        >
+          Terminar Temporada
+        </SquareButton>
       </div>
       {showModal.status ? (
-        <ModalCreateEdit>
+        <Modal>
           {showModal.type === "new" ? (
             <NewSeason closeModal={setShowModal} />
+          ) : showModal.type === "score" ? (
+            <MarcadorTemporada closeModal={setShowModal} />
           ) : (
             <EndSeason closeModal={setShowModal} />
           )}
-        </ModalCreateEdit>
+        </Modal>
       ) : null}
     </>
   );
