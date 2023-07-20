@@ -2,7 +2,10 @@ export default function EndSeasonButton({ onClick }) {
   return (
     <div
       className="flex w-48 h-48 bg-rojo  rounded-lg justify-center items-center"
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick({ status: true, type: "end" });
+      }}
     >
       <div className="flex bg-rojo w-44 h-44 border-white border-4 rounded-md justify-center items-center ">
         <button
